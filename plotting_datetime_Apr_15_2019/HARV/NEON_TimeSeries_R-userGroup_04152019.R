@@ -1,14 +1,15 @@
+Original materials from NEON: National 
 
   
 ### ESA 2016 Time Series Workshop
-setwd("/Users/MagdaGarbowski/Desktop/HARV/")
+# setwd("/Users/MagdaGarbowski/Desktop/HARV/")
 
 library(ggplot2)   # for plotting
 library(lubridate) # part of tidyverse package
 library(scales)    # for adjusting plot scales
 library(gridExtra) # for arranging ggplots 
 
-har.Met.daily<-read.csv("FisherTower-Met/hf001-06-daily-m.csv") 
+har.Met.daily<-read.csv("https://raw.githubusercontent.com/csu-r-users-group/Talk-materials/master/plotting_datetime_Apr_15_2019/HARV/FisherTower-Met/hf001-06-daily-m.csv")
 
 
 ### NEON data 
@@ -27,7 +28,7 @@ qplot(x=date, y=airt, data=har.Met.daily)
 
 ##TIME CLASSES
 
-har.Met_15min<-read.csv(file="FisherTower-Met/hf001-10-15min-m.csv", stringsAsFactors = FALSE) # Can look up data with TAB key
+har.Met_15min<-read.csv("https://raw.githubusercontent.com/csu-r-users-group/Talk-materials/master/plotting_datetime_Apr_15_2019/HARV/FisherTower-Met/hf001-10-15min-m.csv", stringsAsFactors = FALSE) # Can look up data with TAB key
 str(har.Met_15min)
 har.Met_15min$date<-as.Date(har.Met_15min$datetime) # creating column for date
 
@@ -67,7 +68,7 @@ mean(is.na(har.Met_15min_09.11$airt))
 
 ##Time seriesplots with ggplot - PART 2
 
-harMet.daily.09.11<-read.csv(file="FisherTower-Met/Met_HARV_Daily_2009_2011.csv")
+harMet.daily.09.11<-read.csv("https://raw.githubusercontent.com/csu-r-users-group/Talk-materials/master/plotting_datetime_Apr_15_2019/HARV/FisherTower-Met/Met_HARV_Daily_2009_2011.csv")
 class(harMet.daily.09.11$date)
 harMet.daily.09.11$date<-as.Date(harMet.daily.09.11$date)
 

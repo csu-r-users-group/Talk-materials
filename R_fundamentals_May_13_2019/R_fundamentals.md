@@ -61,11 +61,11 @@ The tidyverse primarily is composed of syntactic sugar
 What the heck is syntactic sugar?
 
 
-> In computer science, syntactic sugar is syntax within a programming
-> language that is designed to make things easier to read or to
-> express. It makes the language "sweeter" for human use: things can be
-> expressed more clearly, more concisely, or in an alternative style
-> that some may prefer. ~ wikipedia
+"In computer science, syntactic sugar is syntax within a programming
+language that is designed to make things easier to read or to
+express. It makes the language 'sweeter' for human use: things can be
+expressed more clearly, more concisely, or in an **alternative style
+that some may prefer.**" (emphasis added) ~ wikipedia
 
 # 3. R console
 
@@ -156,18 +156,20 @@ If you assign the results to a variable, the printed output is nothing
 
 When you call a variable, the result is just to print the variable
 
-*This is different than messages*
+*This is different than messages.* Messages are printed to the
+console, but are not the returned result.  
 
 # How R finds variables (and what that means for you)
 
-R relies on the search path to find variables
+R relies on the *search path* to find variables
 
-Since the user can re-define a variable, this has to happen every time
+Since the user can re-define a variable, this search has to happen every time
 a command is executed.
 
 But in R, everything is a variable (including functions!)
 
-**This is why R is slow compared to compiled languages**
+**This is why R is slow compared to compiled languages** It has to
+re-find every variable and function every time.
 
 # The search path and you
 
@@ -267,13 +269,16 @@ For most work, does not matter (until it does).
 R will coerce values to be the same when you try to mix types in a
 vector. 
 
+There are rules to this coercion
+
 To store different types in the same object, you need to use a list
 
 # Lists
 
 A list is a collection of different objects.
 
-Each individual object must adhere to the rules of that object
+Each individual object must adhere to the rules of that object type,
+e.g. an integer vector only contains integers.
 
 A data.frame is a special type of list where each item is the same
 length.
